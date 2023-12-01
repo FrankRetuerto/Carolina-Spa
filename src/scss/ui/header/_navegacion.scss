@@ -1,0 +1,45 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.navegacion {
+    background-color: v.$primario;
+    padding: 1rem 0;
+    &__border {
+        border-top: 0.2rem dashed v.$blanco;
+        border-bottom: 0.2rem dashed v.$blanco;
+    }
+    &__contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.2rem 0;
+        gap: 1.2rem;
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__enlace {
+        text-decoration: none;
+        color: v.$blanco;
+        font-size: 2.4rem;
+    }
+}
+.hero {
+    height: 50rem;
+    background-image: url(../img/spa_hero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgb(0 0 0 /0.5);
+    }
+}

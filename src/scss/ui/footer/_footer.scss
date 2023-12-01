@@ -1,0 +1,43 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    padding-top: 5rem;
+    &__grid {
+        display: grid;
+        gap: 2rem;
+        @include m.tablet {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &__heading {
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+    &__info {
+        text-align: center;
+        line-height: 1.7;
+    }
+    &__list {
+        list-style: none;
+        padding-left: 0;
+        text-align: center;
+        li {
+            font-size: 2rem;
+            line-height: 2;
+        }
+    }
+    &__social {
+        gap: 0.1rem;
+        justify-content: center;
+    }
+    &__copyrigth {
+        text-align: center;
+        border-top: 1px solid v.$gris;
+        padding: 2rem;
+        margin-top: 4rem;
+        margin-bottom: 0;
+        font-size: 1.6rem;
+        color: v.$gris;
+    }
+}

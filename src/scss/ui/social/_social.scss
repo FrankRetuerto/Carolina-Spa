@@ -1,0 +1,27 @@
+.social {
+    display: flex;
+    gap: 1rem;
+    span {
+        display: none;
+    }
+    &__enlace::before {
+        content: '';
+        display: inline-block;
+        padding: 2rem;
+    }
+    &__enlace[href*='facebook'] {
+        background-image: url('../img/icono_facebook.svg');
+    }
+    &__enlace[href*='twitter'] {
+        background-image: url('../img/icono_twitter.svg');
+    }
+    &__enlace[href*='instagram'] {
+        background-image: url('../img/icono_instagram.svg');
+    }
+    &__enlace[href*='youtube'] {
+        background-image: url('../img/icono_youtube.svg');
+    }
+    &__enlace[href*='tiktok'] {
+        background-image: url('../img/icono_tiktok.svg');
+    }
+}

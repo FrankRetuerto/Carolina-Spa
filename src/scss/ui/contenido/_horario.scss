@@ -1,0 +1,47 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.horario {
+    margin-top: 5rem;
+    padding: 5rem 0;
+    color: v.$blanco;
+    background-image: linear-gradient(to bottom, v.$primario 0%, transparent 100%), url('../img/bg_horarios.jpg');
+    @include m.tablet {
+        background-image: linear-gradient(to right, v.$primario 0%, transparent 100%), url('../img/bg_horarios.jpg');
+    }
+    &__grid {
+        display: grid;
+        @include m.tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &__heading {
+        text-transform: uppercase;
+        font-weight: normal;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+    &__info {
+        line-height: 1.4;
+        font-size: 2rem;
+        text-align: center;
+        text-shadow: 1px 1px 10px #000;
+    }
+}
+.tabla {
+    background-color: v.$primario;
+    border: 0.4rem solid v.$secundario;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    &__thead {
+        background-color: v.$secundario;
+    }
+    &__th,
+    &__td {
+        padding: 1rem 0;
+    }
+    &__tr:hover {
+        background-color: darken(v.$primario, 10%);
+    }
+}

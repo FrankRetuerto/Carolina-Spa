@@ -1,0 +1,40 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.cita {
+    background-image: url(../img/bg_citas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: v.$blanco;
+    margin-top: 5rem;
+    padding: 5rem 0;
+    &__contenido {
+        max-width: 70rem;
+        @include m.tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__heading {
+        text-transform: uppercase;
+        font-size: 4rem;
+        margin-top: 0;
+        margin-bottom: 0rem;
+    }
+    &__info {
+        line-height: 3.3rem;
+        text-align: center;
+    }
+    &__enlace {
+        @include m.boton(v.$blanco, v.$primario);
+        &:hover {
+            background-color: darken(v.$primario, 10%);
+        }
+        @include m.tablet {
+            display: inline-block;
+        }
+    }
+}

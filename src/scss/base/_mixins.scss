@@ -1,0 +1,35 @@
+@use 'variables' as v;
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+@mixin titulo {
+    &__heading {
+        text-transform: lowercase;
+        font-weight: normal;
+        color: v.$secundario;
+        font-family: v.$fuenteCursiva;
+        span {
+            display: block;
+            text-transform: uppercase;
+            font-family: v.$fuentePrincipal;
+            color: v.$negro;
+        }
+    }
+}
+@mixin boton($color, $background) {
+    text-decoration: none;
+    color: $color;
+    font-size: 2rem;
+    background-color: $background;
+    padding: 1rem 4rem;
+    display: block;
+    text-align: center;
+}

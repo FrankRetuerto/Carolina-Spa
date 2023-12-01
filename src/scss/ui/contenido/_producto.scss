@@ -1,0 +1,48 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.productos {
+    @include m.titulo;
+    &__grid {
+        display: grid;
+        justify-items: center;
+        gap: 2rem;
+        @include m.tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include m.desktop {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+.producto {
+    background-color: white;
+    width: fit-content;
+    max-width: 40rem;
+    &__mask {
+        overflow: hidden;
+    }
+    &__imagen {
+        transition-property: transform;
+        transition-duration: 0.3s;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    &__info {
+        padding: 2rem;
+    }
+    &__heading {
+        margin: 0 auto;
+    }
+    &__texto,
+    &__precio {
+        text-align: center;
+    }
+    &__precio {
+        color: v.$gris;
+        font-weight: bold;
+        font-size: 2.4rem;
+        margin-bottom: 0;
+    }
+}
